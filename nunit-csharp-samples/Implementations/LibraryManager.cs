@@ -4,11 +4,7 @@
 public class LibraryManager : ILibraryManager
 {
     private List<Book> _books;
-    
-    /// <summary>
-    /// Gets or sets a book articul.
-    /// </summary>
-    public string Articul { get; set; }
+    public List<Book> Books { get => _books; }
 
     /// <summary>
     /// Adds a book to the library's collection.

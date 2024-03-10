@@ -14,8 +14,17 @@ public class LibraryStatisticsAnalyzer
     /// <returns>Book list.</returns>
     public List<Book> GetBooksByAuthor(string author)
     {
-        // TODO step 3.
-        return [];
+        List<Book> books = new List<Book>();
+
+        foreach (Book b in _manager.Books)
+        {
+            if (author == b.Author)
+            {
+                books.Add(b);
+            }
+        }
+
+        return books;
     }
     
     /// <summary>
@@ -25,8 +34,15 @@ public class LibraryStatisticsAnalyzer
     /// <returns>Book.</returns>
     public Book GetBookByTitle(string title)
     {
-        // TODO step 3.
-        return new Book();
+        foreach (Book b in _manager.Books)
+        {
+            if (title == b.Title)
+            {
+                return b;
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -36,7 +52,14 @@ public class LibraryStatisticsAnalyzer
     /// <returns>Book.</returns>
     public Book GetBookByArticul(string articul)
     {
-        // TODO step 3.
-        return new Book();
+        foreach (Book b in _manager.Books)
+        {
+            if (articul == b.Articul)
+            {
+                return b;
+            }
+        }
+
+        return null;
     }
 }
