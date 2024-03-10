@@ -3,24 +3,24 @@
 /// </summary>
 public class LibraryManager : ILibraryManager
 {
-    private List<Book> _books;
-    public List<Book> Books { get => _books; }
+    private List<Book?> _books = new List<Book?>();
+    public List<Book?> Books { get => _books; }
 
     /// <summary>
     /// Adds a book to the library's collection.
     /// </summary>
     /// <param name="book">The book to add.</param>
-    public void AddBook(Book book)
+    public void AddBook(Book? book)
     {
-        _books.Add(book);
-        // TODO step 2.
+        if(book != null)
+            _books.Add(book);
     }
 
     /// <summary>
     /// Removes a book from the library's collection.
     /// </summary>
     /// <param name="book">The book to remove.</param>
-    public void RemoveBook(Book book)
+    public void RemoveBook(Book? book)
     {
         if (_books.Contains(book))
         {

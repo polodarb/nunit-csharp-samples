@@ -12,13 +12,13 @@ public class LibraryStatisticsAnalyzer
     /// </summary>
     /// <param name="author">Book author.</param>
     /// <returns>Book list.</returns>
-    public List<Book> GetBooksByAuthor(string author)
+    public List<Book?> GetBooksByAuthor(string author)
     {
-        List<Book> books = new List<Book>();
+        List<Book?> books = new List<Book?>();
 
-        foreach (Book b in _manager.Books)
+        foreach (Book? b in _manager.Books)
         {
-            if (author == b.Author)
+            if (author == b?.Author)
             {
                 books.Add(b);
             }
@@ -32,11 +32,11 @@ public class LibraryStatisticsAnalyzer
     /// </summary>
     /// <param name="title">Book title.</param>
     /// <returns>Book.</returns>
-    public Book GetBookByTitle(string title)
+    public Book? GetBookByTitle(string title)
     {
-        foreach (Book b in _manager.Books)
+        foreach (Book? b in _manager.Books)
         {
-            if (title == b.Title)
+            if (title == b?.Title)
             {
                 return b;
             }
@@ -50,11 +50,11 @@ public class LibraryStatisticsAnalyzer
     /// </summary>
     /// <param name="articul">Book articul.</param>
     /// <returns>Book.</returns>
-    public Book GetBookByArticul(string articul)
+    public Book? GetBookByArticul(string articul)
     {
-        foreach (Book b in _manager.Books)
+        foreach (Book? b in _manager.Books)
         {
-            if (articul == b.Articul)
+            if (articul == b?.Articul)
             {
                 return b;
             }
