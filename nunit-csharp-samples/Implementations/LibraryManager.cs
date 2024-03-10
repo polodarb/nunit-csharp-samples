@@ -4,6 +4,11 @@
 public class LibraryManager : ILibraryManager
 {
     private List<Book> _books;
+    
+    /// <summary>
+    /// Gets or sets a book articul.
+    /// </summary>
+    public string Articul { get; set; }
 
     /// <summary>
     /// Adds a book to the library's collection.
@@ -21,6 +26,14 @@ public class LibraryManager : ILibraryManager
     /// <param name="book">The book to remove.</param>
     public void RemoveBook(Book book)
     {
-        _books.Remove(book);
+        if (_books.Contains(book))
+        {
+            _books.Remove(book);
+            Console.WriteLine("Book removed successfully.");
+        }
+        else
+        {
+            Console.WriteLine("The book is not in the collection.");
+        }
     }
 }
